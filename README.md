@@ -1,0 +1,1 @@
+Adaptando o modelo de fine tuning para ambiente docker.
