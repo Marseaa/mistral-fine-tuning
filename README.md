@@ -1,1 +1,1 @@
-Adaptando o modelo de fine tuning para ambiente docker.
+Adaptando o modelo mistral fine tuning usando unsloth (https://github.com/unslothai/unsloth) para ambiente docker.
