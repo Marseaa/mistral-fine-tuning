@@ -1,4 +1,4 @@
-FROM python:3.8
+FROM python:3.12.2
 
 # copia o arquivo mistral.py 
 COPY mistral.py /app/mistral.py
@@ -26,3 +26,5 @@ RUN pip install --no-deps packaging ninja einops xformers trl peft accelerate bi
 #sem flash-attn
 
 CMD ["python", "mistral.py"]
+
+#docker run --gpus all --name fine_tuning_container -it fine_tuning_image
