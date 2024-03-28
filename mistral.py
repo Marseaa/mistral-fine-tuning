@@ -114,4 +114,8 @@ trainer = SFTTrainer(
     ),
 )
 
+print("Tudo certo, treinando dados...")
 trainer_stats = trainer.train()
+print("Fim do treinamento de dados.")
+
+#até treinamento de dados, falta inferencia
