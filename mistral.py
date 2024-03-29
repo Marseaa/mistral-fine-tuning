@@ -114,8 +114,20 @@ trainer = SFTTrainer(
     ),
 )
 
-print("Tudo certo, treinando dados...")
+print("\nTudo certo, treinando dados...")
 trainer_stats = trainer.train()
-print("Fim do treinamento de dados.")
+print("\nFim do treinamento de dados. Salvando no huggingface...\n")
 
-#até treinamento de dados, falta inferencia
+# salvando treinamento no huggingface usando float16
+
+# Merge to 16bit
+if True: model.save_pretrained_merged("model", tokenizer, save_method = "merged_16bit",)
+if True: model.push_to_hub_merged(
+    "Marseaa/Mistral-7B-Summarization", 
+    tokenizer, 
+    save_method = "merged_16bit", 
+    token = "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"
+)
+
+print("\nFim do salvamento.")
+
