@@ -4,6 +4,6 @@ Para GPU com major_version >= 8
 --------------------------------------------------------------------
 mistral.py + Dockerfile -> treina dados e cria modelo no huggingface
 
-dentro do diretório "inferencia":
+dentro do diretório "inferencia": (modelo já criado, pode rodar a inferencia direto)
     app.py + dockerfile -> inferencia a partir de modelo criado
 --------------------------------------------------------------------
