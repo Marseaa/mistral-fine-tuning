@@ -1,4 +1,4 @@
-from unsloth import FastLanguageModel
+o from unsloth import FastLanguageModel
 from datasets import Dataset
 from trl import SFTTrainer
 from transformers import TrainingArguments
@@ -126,7 +126,7 @@ if True: model.push_to_hub_merged(
     "Marseaa/Mistral-7B-Summarization", 
     tokenizer, 
     save_method = "merged_16bit", 
-    token = "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"
+    token = "aqui vem o token do modelo"
 )
 
 print("\nFim do salvamento.")
