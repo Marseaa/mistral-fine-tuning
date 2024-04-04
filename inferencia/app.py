@@ -6,6 +6,11 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 # device = "cuda"
 
 def gerar_texto(prompt):
+    os.system("clear")
+    print("\n\nGerando texto a partir do input: ")
+    print(prompt)
+    print("\n\n")
+
     # carregar modelo salvo no huggingface para realizar a inferencia
 
     # carrega modelo
@@ -18,33 +23,38 @@ def gerar_texto(prompt):
     outputs = model.generate(**inputs, max_length=300) #num max de caracteres -> pode aumentar
     texto_gerado = tokenizer.batch_decode(outputs)[0]
 
+
     return texto_gerado
 
 if __name__ == "__main__":
 
     while True:
-        os.system("cls")
+        os.system("clear")
         print("\n\n----GERADOR DE TEXTO PHI-1.5----")
         print("1 - Gerar texto\n2 - Sair")
         op = input("Selecione a opcao: ")
 
         if op == "1":
-            os.system("cls")
+            os.system("clear")
             print("\n\n----GERADOR DE TEXTO PHI-1.5----")
             prompt = input("Insira o texto inicial: ")
 
             texto_gerado = gerar_texto(prompt)
+            print("\n\nGeracao de texto concluida...")
+            print("Pressione Enter para visualizar o texto gerado...")
+            input()
+            os.system("clear")
 
-            os.system("cls")
             print("\n\n----GERADOR DE TEXTO PHI-1.5----")
-
-            print("\nTexto Gerado:\n")
+            print("\n\nTexto inserido: ")
+            print(prompt)
+            print("\n\nTexto Gerado:\n")
             print(texto_gerado)
             print("Pressione Enter para continuar...")
             input()
 
         elif op == "2":
-            os.system("cls")
+            os.system("clear")
             print("\n\nSaindo...\n\n")
             break
 
