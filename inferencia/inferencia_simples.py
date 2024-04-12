@@ -22,7 +22,7 @@ def gerar_texto(prompt):
     # carrega tokenizer
     tokenizer = AutoTokenizer.from_pretrained("Marseaa/Mistral-7B-Summarization", trust_remote_code=True)
 
-    inputs = tokenizer(prompt, return_tensors1="pt", return_attention_mask=True)
+    inputs = tokenizer(prompt, return_tensors="pt", return_attention_mask=True)
     inputs = {k: v.to(device) for k, v in inputs.items()}  # Mover para a GPU
     outputs = model.generate(**inputs, max_length=300).to(device) # num max de caracteres -> pode aumentar
     texto_gerado = tokenizer.batch_decode(outputs)[0]
