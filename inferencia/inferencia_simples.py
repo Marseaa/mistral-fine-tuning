@@ -32,7 +32,8 @@ def gerar_texto(prompt):
 
 if __name__ == "__main__":
 
-    prompt = ""
+    prompt = "Detective Emily Carter stood before the imposing gates, her breath forming mist in the chilly air. She adjusted her trench coat, the fabric rustling softly as she surveyed the scene. She had received an invitation to the manor earlier that day—a cryptic message scrawled in elegant handwriting, inviting her to solve a mystery that had plagued the mansion for decades."
+
     texto_gerado = gerar_texto(prompt)
     print("\n\n----GERADOR DE TEXTO----\n\n")
     print(texto_gerado)
