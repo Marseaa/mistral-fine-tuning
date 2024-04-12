@@ -10,7 +10,6 @@ else:
     device = "cpu"
 
 def gerar_texto(prompt):
-    os.system("clear")
     print("\n\nGerando texto a partir do input: ")
     print(prompt)
     print("\n\n")
