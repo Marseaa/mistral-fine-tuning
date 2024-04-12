@@ -22,5 +22,7 @@ services:
             - CHOKIDAR_USEPOLLING=true
         volumes:
             - ./app.py:/app/app.py
+            # para rodar inferencia simples:
+            #- ./inferencia_simples.py:/app/inferencia_simples.py
         stdin_open: true  # entrada interativa
         tty: true

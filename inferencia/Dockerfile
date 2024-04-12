@@ -14,3 +14,5 @@ RUN pip install torch torchvision torchaudio transformers
 ENV NVIDIA_VISIBLE_DEVICES all
 
 CMD ["python3", "app.py"]
+# rodar inferencia mais simples
+#CMD ["python3", "inferencia_simples.py"]

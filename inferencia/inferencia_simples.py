@@ -1,5 +1,4 @@
 import torch
-import os
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
@@ -34,37 +33,8 @@ def gerar_texto(prompt):
 
 if __name__ == "__main__":
 
-    while True:
-        os.system("clear")
-        print("\n\n----GERADOR DE TEXTO----")
-        print("1 - Gerar texto\n2 - Sair")
-        op = input("Selecione a opcao: ")
-
-        if op == "1":
-            os.system("clear")
-            print("\n\n----GERADOR DE TEXTO----")
-            prompt = input("Insira o texto inicial: ")
-
-            texto_gerado = gerar_texto(prompt)
-            print("\n\nGeracao de texto concluida...")
-            print("Pressione Enter para visualizar o texto gerado...")
-            input()
-            os.system("clear")
-
-            print("\n\n----GERADOR DE TEXTO----")
-            print("\n\nTexto inserido: ")
-            print(prompt)
-            print("\n\nTexto Gerado:\n")
-            print(texto_gerado)
-            print("Pressione Enter para continuar...")
-            input()
-
-        elif op == "2":
-            os.system("clear")
-            print("\n\nSaindo...\n\n")
-            break
-
-        else:
-            print("Opção inválida. Por favor, selecione novamente.")
-
+    prompt = ""
+    texto_gerado = gerar_texto(prompt)
+    print("\n\n----GERADOR DE TEXTO----\n\n")
+    print(texto_gerado)
 
