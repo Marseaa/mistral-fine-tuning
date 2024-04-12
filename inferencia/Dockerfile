@@ -1,25 +1,16 @@
-# Dockerfile para fazer inferencia com modelo salvo no huggingface
 
-FROM python:3.9 
+FROM nvidia/cuda:12.2.2-devel-ubuntu22.04
+ENV DEBIAN_FRONTEND noninteractive
 
-COPY app.py /app/app.py
+RUN apt-get update && apt-get install -y wget 
+
+# instalando python
+RUN apt-get install -y python3  && apt-get install -y python3-pip
 
 WORKDIR /app
 
-# instalacao das dependencias
-RUN pip install transformers
+RUN pip install torch torchvision torchaudio transformers
 
-# instalacao pytotch
-RUN pip install torch torchvision torchaudio
-
-RUN pip install --upgrade --force-reinstall --no-cache-dir torch==2.2.0 triton \
-  --index-url https://download.pytorch.org/whl/cu121
-
-# define a variável de ambiente para especificar que o Docker usará a GPU
 ENV NVIDIA_VISIBLE_DEVICES all
 
-# executando a inferencia
-CMD ["python", "app.py"]
-
-# docker run -v cache_volume:/pip-cache -it --network redeprincipal --gpus all --name test_inference_container teste_inference_image:tag_teste
-# docker start -ai test_inference_containercls
+CMD ["python3", "app.py"]
