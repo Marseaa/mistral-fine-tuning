@@ -4,7 +4,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 if torch.cuda.is_available():
-    print("Cuda dispobível, rodando na gpu...")
+    print("Cuda disponível, rodando na gpu...")
     device = "cuda"
 else:
     print("Cuda não disponível, rodando na cpu...")
