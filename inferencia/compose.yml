@@ -21,7 +21,6 @@ services:
             - COLORTERM=truecolor
             - CHOKIDAR_USEPOLLING=true
         volumes:
-            - ./path/para/seu/app:/app
             - ./app.py:/app/app.py
         tty: true
         command: ["python3", "app.py"]
