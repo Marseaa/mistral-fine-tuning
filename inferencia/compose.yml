@@ -22,5 +22,5 @@ services:
             - CHOKIDAR_USEPOLLING=true
         volumes:
             - ./app.py:/app/app.py
+        stdin_open: true  # entrada interativa
         tty: true
-        command: ["python3", "app.py"]
